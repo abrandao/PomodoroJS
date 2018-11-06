@@ -47,6 +47,8 @@ decreaseBreak.addEventListener("click", function(){
 function start() {
   count = workClicks * 60;  
   workSession = setInterval(workCountDown, 1000);
+  document.getElementById("title").innerHTML = "POMODORO TIME";
+  document.getElementById("top").innerHTML = "POMODORO TIME";
 } //end of function
 
 //function timeSystem
@@ -105,13 +107,16 @@ function reset() {
 // function startBreak
 function startBreak() {
 
-    var audio = new Audio('audio/start-break.mp3');
-    audio.play();
+  document.getElementById("title").innerHTML = "BREAK TIME";
+  document.getElementById("top").innerHTML = "BREAK TIME";
 
-    count = breakClicks * 60;
-    breakSession = setInterval(breakCountDown,1000);
-    document.getElementById("pause").disabled = true;
-    document.getElementById("resume").disabled = true;
+  var audio = new Audio('audio/start-break.mp3');
+  audio.play();
+
+  count = breakClicks * 60;
+  breakSession = setInterval(breakCountDown,1000);
+  document.getElementById("pause").disabled = true;
+  document.getElementById("resume").disabled = true;
 } // end of function
 
 // function breakCountDown
