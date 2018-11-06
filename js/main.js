@@ -135,9 +135,3 @@ function breakCountDown() {
     }, 3000)
   } //end of if
 } // end of function
-
-// function playAudio
-function playAudio() {
-  var audio = new Audio('audio/small-bell-ring.mp3');
-  audio.play();
-}
