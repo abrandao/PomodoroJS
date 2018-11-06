@@ -49,8 +49,8 @@ function start() {
   workSession = setInterval(workCountDown, 1000);
 } //end of function
 
-// function workCountDown
-function workCountDown() {   
+//function timeSystem
+function countTime(){
   var seconds = count;
   var hours = Math.floor(seconds/3600);  
   seconds -= hours * 3600;
@@ -58,7 +58,12 @@ function workCountDown() {
   var minutes = Math.floor(seconds/60);
   seconds -= minutes * 60;    
   document.getElementById("showtime").innerHTML = ('00' + hours).slice(-2) +":" + ('00' + minutes).slice(-2) + ":" + ('00' + seconds).slice(-2); 
-  count--; 
+  count--;
+} // end of function
+
+// function workCountDown
+function workCountDown() {   
+  countTime();
   if(count < 0) {
     clearInterval(workSession);
     workSession = null;
@@ -70,7 +75,7 @@ function workCountDown() {
 } //end of function
 
 // function pause
-function pause() {
+function pause() {  
   clearInterval(workSession);
   clearInterval(breakSession);
   workSession = null;
@@ -78,7 +83,7 @@ function pause() {
 } //end of function
 
 // function resume
-function resume() {
+function resume() {  
   workSession = setInterval(workCountDown, 1000);
 } //end of function
 
@@ -108,17 +113,8 @@ function startBreak() {
 
 // function breakCountDown
 function breakCountDown() {
-  document.getElementById("timer-panel").style.backgroundColor = "lightblue";
-  
-  var seconds = count;
-  var hours = Math.floor(seconds/3600);  
-  seconds -= hours * 3600;
-  seconds = seconds - (hours * 3600);  
-  var minutes = Math.floor(seconds/60);
-  seconds -= minutes * 60;    
-  document.getElementById("showtime").innerHTML = ('00' + hours).slice(-2) +":" + ('00' + minutes).slice(-2) + ":" + ('00' + seconds).slice(-2); 
-  count--;
-
+  document.getElementById("timer-panel").style.backgroundColor = "lightblue";  
+  countTime();
   if(count < 0) {
     clearInterval(breakSession);
     breakSession = null;
