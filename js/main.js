@@ -47,8 +47,8 @@ decreaseBreak.addEventListener("click", function(){
 function start() {
   count = workClicks * 60;  
   workSession = setInterval(workCountDown, 1000);
-  document.getElementById("title").innerHTML = "POMODORO TIME";
-  document.getElementById("top").innerHTML = "POMODORO TIME";
+  document.getElementById("title").innerHTML = "WORK TIME";
+  document.getElementById("top").innerHTML = "WORK TIME";
 } //end of function
 
 //function timeSystem
