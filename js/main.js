@@ -58,8 +58,10 @@ function countTime(){
   seconds -= hours * 3600;
   seconds = seconds - (hours * 3600);  
   var minutes = Math.floor(seconds/60);
-  seconds -= minutes * 60;    
-  document.getElementById("showtime").innerHTML = ('00' + hours).slice(-2) +":" + ('00' + minutes).slice(-2) + ":" + ('00' + seconds).slice(-2); 
+  seconds -= minutes * 60;
+  var countFormula = ('00' + hours).slice(-2) +":" + ('00' + minutes).slice(-2) + ":" + ('00' + seconds).slice(-2);
+  document.getElementById("showtime").innerHTML = countFormula;
+  document.getElementById("title").innerHTML = countFormula;
   count--;
 } // end of function
 
