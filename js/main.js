@@ -113,7 +113,7 @@ function startBreak() {
 
 // function breakCountDown
 function breakCountDown() {
-  document.getElementById("timer-panel").style.backgroundColor = "lightblue";  
+  document.getElementById("timer-panel").style.backgroundColor = "#7aadff";  
   countTime();
   if(count < 0) {
     clearInterval(breakSession);
