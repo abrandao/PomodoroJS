@@ -87,7 +87,6 @@ function resume() {
   workSession = setInterval(workCountDown, 1000);
 } //end of function
 
-
 // function reset
 function reset() {
   if(workSession) {
@@ -105,6 +104,10 @@ function reset() {
 
 // function startBreak
 function startBreak() {
+
+    var audio = new Audio('audio/start-break.mp3');
+    audio.play();
+
     count = breakClicks * 60;
     breakSession = setInterval(breakCountDown,1000);
     document.getElementById("pause").disabled = true;
@@ -120,6 +123,16 @@ function breakCountDown() {
     breakSession = null;
     var message = setTimeout(function() {
       document.getElementById("showtime").innerHTML = "Congrats for complete POMODORO";
+
+      var audio = new Audio('audio/end-break.mp3');
+      audio.play();
+
     }, 3000)
   } //end of if
 } // end of function
+
+// function playAudio
+function playAudio() {
+  var audio = new Audio('audio/small-bell-ring.mp3');
+  audio.play();
+}
