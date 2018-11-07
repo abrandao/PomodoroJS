@@ -46,8 +46,7 @@ decreaseBreak.addEventListener("click", function(){
 // function start
 function start() {
   count = workClicks * 60;  
-  workSession = setInterval(workCountDown, 1000);
-  document.getElementById("title").innerHTML = "WORK TIME";
+  workSession = setInterval(workCountDown, 1000);  
   document.getElementById("top").innerHTML = "WORK TIME";
 } //end of function
 
@@ -109,7 +108,6 @@ function reset() {
 // function startBreak
 function startBreak() {
 
-  document.getElementById("title").innerHTML = "BREAK TIME";
   document.getElementById("top").innerHTML = "BREAK TIME";
 
   var audio = new Audio('audio/start-break.mp3');
