@@ -85,8 +85,9 @@ div {
     font-size: 1em;
 }
 
-.upperpanelBtn:hover {
-    background-color: #fc5d66;
+.btn:hover, .upperpanelBtn:hover {
+    background-color: #a9b1bc;
+    color: #fff;
 }
 /* ---------------------------
     TIMER PANEL
