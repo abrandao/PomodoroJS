@@ -99,8 +99,7 @@ function reset() {
     clearInterval(breakSession);
     breakSession = null;
   }
-  document.getElementById("showtime").innerHTML = "";
-  document.getElementById("timer-panel").style.backgroundColor = "#FC5D66";
+  document.getElementById("showtime").innerHTML = "- - : - - : - -";  
   document.getElementById("pause").disabled = false;
   document.getElementById("resume").disabled = false;
 } // end of function
@@ -121,7 +120,6 @@ function startBreak() {
 
 // function breakCountDown
 function breakCountDown() {
-  document.getElementById("timer-panel").style.backgroundColor = "#7aadff";  
   countTime();
   if(count < 0) {
     clearInterval(breakSession);
