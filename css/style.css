@@ -25,9 +25,10 @@ body {
         BORDER STYLE 
 ----------------------------- */
 div {
-    border: solid;    
-    border-color: #f4f4ff;
-    border-width: 6px;
+    border: solid;
+    border-radius: 10px;   
+    border-width: 3px;
+    border-color: #515d70;
 }
 /* ---------------------------
     HEADER PANEL
@@ -37,9 +38,7 @@ div {
     width: 100%;
     padding-top:30px;
     color: #000;
-    text-align: center;
-    border-bottom: 0px;    
-    border-color: #515d70;
+    text-align: center;    
 }
 /* ---------------------------
     WORK DURATION PANEL 
@@ -52,9 +51,7 @@ div {
     text-align: center;
     width: 100%;
     padding: 10px;    
-    color: #000;
-    border-bottom: 0px; 
-    border-color: #515d70;
+    color: #000;       
 }
 /* ---------------------------
     BREAK DURATION PANEL 
@@ -63,9 +60,7 @@ div {
     text-align: center;
     width: 100%;
     padding: 10px;
-    color: #000;
-    border-bottom: 0px; 
-    border-color: #515d70;
+    color: #000;       
 }
 /* ---------------------------
     BUTTON PANEL
@@ -73,9 +68,7 @@ div {
 #button-panel {
     text-align: center;    
     height: auto;
-    width: 100%;
-    border-color: #515d70;
-    border-bottom: 0px; 
+    width: 100%;    
 }
 .btn {
     background-color: transparent;
@@ -97,8 +90,8 @@ div {
     width: 100%;
     text-align: center;
     padding: 20px;
-    border-color: #515d70;    
+        
 }
 #showtime {
-    font-size: 60px;
+    font-size: 80px;
 }
