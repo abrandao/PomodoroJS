@@ -45,9 +45,9 @@ decreaseBreak.addEventListener("click", function(){
 
 // function start
 function start() {
-  count = workClicks * 60;  
+  reset();
+  count = workClicks * 60;
   workSession = setInterval(workCountDown, 1000);  
-  document.getElementById("top").innerHTML = "WORK TIME";
 } //end of function
 
 //function timeSystem
