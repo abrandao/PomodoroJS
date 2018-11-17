@@ -29,6 +29,9 @@ div {
     border-radius: 10px;    
     border-color: #515d70;
 }
+.time-buttons {
+    border: none;
+}
 /* ---------------------------
     HEADER PANEL
  ----------------------------- */
