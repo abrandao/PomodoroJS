@@ -35,10 +35,9 @@ div {
 /* ---------------------------
     HEADER PANEL
  ----------------------------- */
-#heading-panel {
-    height: 280px;
+#heading-panel {    
     width: 100%;
-    padding-top:30px;
+    padding:20px;
     color: #000;
     text-align: center;    
 }
@@ -46,13 +45,12 @@ div {
     WORK DURATION PANEL 
  ----------------------------- */
 .panel-2 {
-    height: 100px;
-    width: 100%;   
+    padding:20px;  
 }
 #work-duration {
     text-align: center;
     width: 100%;
-    padding: 10px;    
+    padding: 20px;    
     color: #000;       
 }
 /* ---------------------------
@@ -61,7 +59,7 @@ div {
 #break-duration {
     text-align: center;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     color: #000;       
 }
 /* ---------------------------
