@@ -45,9 +45,19 @@ decreaseBreak.addEventListener("click", function(){
 
 // function start
 function start() {
-  reset();
+  //reset();
+
+  if(workSession) {
+    clearInterval(workSession);
+    workSession = null;
+  } else {
+    clearInterval(breakSession);
+    breakSession = null;
+  }
+
   count = workClicks * 60;
-  workSession = setInterval(workCountDown, 1000);  
+  workSession = setInterval(workCountDown, 1000);
+  document.getElementById("resume").disabled = true; 
 } //end of function
 
 //function timeSystem
@@ -83,11 +93,13 @@ function pause() {
   clearInterval(breakSession);
   workSession = null;
   breakSession = null;
+  document.getElementById("resume").disabled = false;
 } //end of function
 
 // function resume
-function resume() {  
+function resume() { 
   workSession = setInterval(workCountDown, 1000);
+  document.getElementById("resume").disabled = true;
 } //end of function
 
 // function reset
