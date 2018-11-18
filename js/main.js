@@ -45,8 +45,6 @@ decreaseBreak.addEventListener("click", function(){
 
 // function start
 function start() {
-  //reset();
-
   if(workSession) {
     clearInterval(workSession);
     workSession = null;
@@ -54,7 +52,6 @@ function start() {
     clearInterval(breakSession);
     breakSession = null;
   }
-
   count = workClicks * 60;
   workSession = setInterval(workCountDown, 1000);
   document.getElementById("resume").disabled = true; 
@@ -102,8 +99,8 @@ function resume() {
   document.getElementById("resume").disabled = true;
 } //end of function
 
-// function reset
-function reset() {
+// function stop
+function stop() {
   if(workSession) {
     clearInterval(workSession);
     workSession = null;
@@ -137,7 +134,7 @@ function breakCountDown() {
     clearInterval(breakSession);
     breakSession = null;
     var message = setTimeout(function() {
-      document.getElementById("showtime").innerHTML = "Congrats for complete POMODORO";
+      document.getElementById("showtime").innerHTML = "POMODORO COMPLETE";
 
       var audio = new Audio('audio/end-break.mp3');
       audio.play();
