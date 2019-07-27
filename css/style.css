@@ -1,97 +1,14 @@
-/* ==========================================
-                          STYLE NOTES
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
 
-Inspired by https://dribbble.com/shots/2719315-Countdown-timer
-
-=============================================== */
-
-
-/* ---------------------------
-        BODY STYLE 
------------------------------ */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4ff;
-    text-transform: uppercase;
-    font-size: 1.5em;    
+.icon-block {
+  padding: 0 15px;
 }
-/* remove dotted outline on buttons */
-
-* {
-    outline: 0px !important;
-    -webkit-appearance: none;
-}
-/* ---------------------------
-        BORDER STYLE 
------------------------------ */
-div {
-    border: solid;
-    border-radius: 10px;    
-    border-color: #515d70;
-}
-.time-buttons {
-    border: none;
-}
-/* ---------------------------
-    HEADER PANEL
- ----------------------------- */
-#heading-panel {    
-    width: 100%;
-    padding:20px;
-    color: #000;
-    text-align: center;    
-}
-/* ---------------------------
-    WORK DURATION PANEL 
- ----------------------------- */
-.panel-2 {
-    padding:20px;  
-}
-#work-duration {
-    text-align: center;
-    width: 100%;
-    padding: 20px;    
-    color: #000;       
-}
-/* ---------------------------
-    BREAK DURATION PANEL 
- ----------------------------- */
-#break-duration {
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    color: #000;       
-}
-/* ---------------------------
-    BUTTON PANEL
- ----------------------------- */
-#button-panel {
-    text-align: center;    
-    height: auto;
-    width: 100%;    
-}
-.btn {
-    background-color: transparent;
-    text-transform: uppercase;
-    border: none;
-    color: #6d7797;
-    font-size: 1em;
-}
-
-.btn:hover, .upperpanelBtn:hover {
-    background-color: #a9b1bc;
-    color: #fff;
-}
-/* ---------------------------
-    TIMER PANEL
- ----------------------------- */
-#timer-panel {   
-    color: #000;    
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-        
-}
-#showtime {
-    font-size: 50px;
+.icon-block .material-icons {
+	font-size: inherit;
 }
