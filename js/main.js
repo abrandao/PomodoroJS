@@ -10,12 +10,12 @@ var breakSession;
 // increase work time
 var increaseWork = document.getElementById("addWorkButton");
 increaseWork.addEventListener("click", function(){
-  workClicks+= 1;
+  workClicks += 1;
   workDisplay.innerHTML = workClicks;
 }, false);
 
 // Decrease work time
-var  decreaseWork = document.getElementById("minusWorkButton");
+var decreaseWork = document.getElementById("minusWorkButton");
 decreaseWork.addEventListener("click", function() {
   workClicks-= 1;
   workDisplay.innerHTML = workClicks;
@@ -28,14 +28,14 @@ decreaseWork.addEventListener("click", function() {
 // Increase break time
 var increaseBreak = document.getElementById("addBreakButton");
 increaseBreak.addEventListener("click", function(){
-  breakClicks+= 1;
+  breakClicks += 1;
   breakDisplay.innerHTML = breakClicks;
 }, false);
 
 // Decrease break time
 var decreaseBreak = document.getElementById("minusBreakButton");
 decreaseBreak.addEventListener("click", function(){
-  breakClicks-= 1;
+  breakClicks -= 1;
   breakDisplay.innerHTML = breakClicks;
   if(breakClicks < 1){
     breakClicks = 1;
@@ -52,7 +52,7 @@ function start() {
     clearInterval(breakSession);
     breakSession = null;
   }
-  count = workClicks * 60;
+  count = workClicks * 60;  
   workSession = setInterval(workCountDown, 1000);
   document.getElementById("resume").disabled = true; 
 } //end of function
@@ -114,14 +114,10 @@ function stop() {
 } // end of function
 
 // function startBreak
-function startBreak() {
-
-  document.getElementById("top").innerHTML = "BREAK TIME";
-
+function startBreak() {  
   var audio = new Audio('audio/start-break.mp3');
   audio.play();
-
-  count = breakClicks * 60;
+  count = breakClicks * 60;  
   breakSession = setInterval(breakCountDown,1000);
   document.getElementById("pause").disabled = true;
   document.getElementById("resume").disabled = true;
