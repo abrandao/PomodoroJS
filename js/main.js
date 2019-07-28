@@ -55,8 +55,7 @@ function start() {
     clearInterval(breakSession);
     breakSession = null;
   }
-  //count = workClicks * 60;
-  count = 3;
+  count = workClicks * 60;  
   workSession = setInterval(workCountDown, 1000);
   document.getElementById("resume").disabled = true; 
 } //end of function
@@ -124,8 +123,7 @@ function stop() {
 function startBreak() {  
   var audio = new Audio('audio/start-break.mp3');
   audio.play();
-  //count = breakClicks * 60;
-  count = 6;
+  count = breakClicks * 60;  
   breakSession = setInterval(breakCountDown,1000);
   document.getElementById("pause").disabled = true;
   document.getElementById("resume").disabled = true;
