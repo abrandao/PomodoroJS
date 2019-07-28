@@ -45,6 +45,9 @@ decreaseBreak.addEventListener("click", function(){
 
 // function start
 function start() {
+  M.toast({html: 'Time to focus!', classes: 'rounded'})
+  var audio2 = new Audio('audio/start-work.mp3');
+  audio2.play();
   if(workSession) {
     clearInterval(workSession);
     workSession = null;
@@ -52,7 +55,8 @@ function start() {
     clearInterval(breakSession);
     breakSession = null;
   }
-  count = workClicks * 60;  
+  //count = workClicks * 60;
+  count = 3;
   workSession = setInterval(workCountDown, 1000);
   document.getElementById("resume").disabled = true; 
 } //end of function
@@ -85,7 +89,8 @@ function workCountDown() {
 } //end of function
 
 // function pause
-function pause() {  
+function pause() {
+  M.toast({html: 'See you soon!', classes: 'rounded'})
   clearInterval(workSession);
   clearInterval(breakSession);
   workSession = null;
@@ -94,13 +99,15 @@ function pause() {
 } //end of function
 
 // function resume
-function resume() { 
+function resume() {
+  M.toast({html: 'Welcome back.', classes: 'rounded'})
   workSession = setInterval(workCountDown, 1000);
   document.getElementById("resume").disabled = true;
 } //end of function
 
 // function stop
 function stop() {
+  M.toast({html: 'Ok... bye.', classes: 'rounded'})
   if(workSession) {
     clearInterval(workSession);
     workSession = null;
@@ -117,10 +124,12 @@ function stop() {
 function startBreak() {  
   var audio = new Audio('audio/start-break.mp3');
   audio.play();
-  count = breakClicks * 60;  
+  //count = breakClicks * 60;
+  count = 6;
   breakSession = setInterval(breakCountDown,1000);
   document.getElementById("pause").disabled = true;
   document.getElementById("resume").disabled = true;
+  M.toast({html: 'Time to take a break.', classes: 'rounded'})
 } // end of function
 
 // function breakCountDown
@@ -131,10 +140,10 @@ function breakCountDown() {
     breakSession = null;
     var message = setTimeout(function() {
       document.getElementById("showtime").innerHTML = "POMODORO COMPLETE";
-
       var audio = new Audio('audio/end-break.mp3');
       audio.play();
-
-    }, 3000)
-  } //end of if
+      M.toast({html: 'Congratulations!!', classes: 'rounded'})
+      setTimeout(start, 10000);       
+    }, 3000)    
+  } //end of if 
 } // end of function
