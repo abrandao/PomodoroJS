@@ -44,7 +44,7 @@ decreaseBreak.addEventListener("click", function(){
 }, false);
 
 // function start
-function start() {
+function start() {  
   M.toast({html: 'Time to focus!', classes: 'rounded'})
   var audio2 = new Audio('audio/start-work.mp3');
   audio2.play();
@@ -57,7 +57,7 @@ function start() {
   }
   count = workClicks * 60;  
   workSession = setInterval(workCountDown, 1000);
-  document.getElementById("resume").disabled = true; 
+  disableResume();
 } //end of function
 
 //function timeSystem
@@ -101,7 +101,7 @@ function pause() {
 function resume() {
   M.toast({html: 'Welcome back.', classes: 'rounded'})
   workSession = setInterval(workCountDown, 1000);
-  document.getElementById("resume").disabled = true;
+  disableResume();  
 } //end of function
 
 // function stop
@@ -123,10 +123,9 @@ function stop() {
 function startBreak() {  
   var audio = new Audio('audio/start-break.mp3');
   audio.play();
-  count = breakClicks * 60;  
-  breakSession = setInterval(breakCountDown,1000);
-  document.getElementById("pause").disabled = true;
-  document.getElementById("resume").disabled = true;
+  count = 2;   
+  breakSession = setInterval(breakCountDown,1000); 
+  disableResume();
   M.toast({html: 'Time to take a break.', classes: 'rounded'})
 } // end of function
 
@@ -145,3 +144,10 @@ function breakCountDown() {
     }, 3000)    
   } //end of if 
 } // end of function
+
+function disableResume() {
+  if (workSession > 0)
+    document.getElementById("resume").disabled = true;
+  else
+    document.getElementById("resume").disabled = true;
+}
