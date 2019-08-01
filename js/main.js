@@ -55,10 +55,29 @@ function start() {
     clearInterval(breakSession);
     breakSession = null;
   }
-  count = workClicks * 60;  
+
+  count = workClicks * 60; 
+  //count = 2;
+
+
   workSession = setInterval(workCountDown, 1000);
   disableResume();
+  document.getElementById("logo-container").innerHTML = "WORK TIME";
 } //end of function
+
+// function startBreak
+function startBreak() {  
+  var audio = new Audio('audio/start-break.mp3');
+  audio.play();
+
+  count = workClicks * 60;
+  //count = 2;
+
+  breakSession = setInterval(breakCountDown,1000); 
+  disableResume();
+  M.toast({html: 'Time to take a break.', classes: 'rounded'})
+  document.getElementById("logo-container").innerHTML = "BREAK TIME";
+} // end of function
 
 //function timeSystem
 function countTime(){
@@ -117,16 +136,7 @@ function stop() {
   document.getElementById("showtime").innerHTML = "- - : - - : - -";  
   document.getElementById("pause").disabled = false;
   document.getElementById("resume").disabled = false;
-} // end of function
-
-// function startBreak
-function startBreak() {  
-  var audio = new Audio('audio/start-break.mp3');
-  audio.play();
-  count = 2;   
-  breakSession = setInterval(breakCountDown,1000); 
-  disableResume();
-  M.toast({html: 'Time to take a break.', classes: 'rounded'})
+  document.getElementById("logo-container").innerHTML = "POMODOROJS";
 } // end of function
 
 // function breakCountDown
